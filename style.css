@@ -1,45 +1,67 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 button{
     cursor: pointer;
+    -webkit-transition: all 0.1s ease-in;
+    -o-transition: all 0.1s ease-in;
     transition: all 0.1s ease-in;
 }
 button:hover{
-    transform: scale(1.04);
+    -webkit-transform: scale(1.04);
+        -ms-transform: scale(1.04);
+            transform: scale(1.04);
 }
 li{
     list-style: none;
 }
 
 .container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100vw;
     height: 100vh;
     background-color: rgb(149, 187, 220);
 }
 
 .main{
-    width: 50vw;
+    width: 35rem;
     height: 60vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     border-radius: 5px;
+    background: -o-linear-gradient(315deg,#153677, #4e085f);
     background: linear-gradient(135deg,#153677, #4e085f);
 }
 .input-box{
     width: 100%;
     border: none;
     padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 10px;
-    flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
 }
 .input-task{
     width: 80%;
@@ -66,7 +88,7 @@ li{
 
 #task-container{
     width: 90%;
-    height: 68%;
+    height: 70%;
     padding: 10px;
     margin: 10px;
     border-radius: 8px;
@@ -94,11 +116,18 @@ li{
 .task{
     font-size: 21px;
     margin: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     gap: 5px;
     margin-left: 25px;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-bottom: 1px solid rgba(128, 128, 128, 0.546);
 }
@@ -146,11 +175,18 @@ li{
     .create-btn{
         width: 80px;
     }
+    .main{
+        width: 22rem;
+    }
+    #task-container{
+        height: 76%;
+    }
 }
 
-@media (min-width: 100px) and (max-width:400px) {
+@media (min-width: 100px) and (max-width:300px) {
     .input-box{
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     }
     .input-task{
         width: 100%;
