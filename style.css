@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button{
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+}
+button:hover{
+    transform: scale(1.04);
+}
+li{
+    list-style: none;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(149, 187, 220);
+}
+
+.main{
+    width: 50vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    background: linear-gradient(135deg,#153677, #4e085f);
+}
+.input-box{
+    width: 100%;
+    border: none;
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+.input-task{
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+}
+.create-btn{
+    width: 20%;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.973);
+    background-color: rgb(17, 223, 17);
+}
+.create-btn:hover{
+    background-color: rgba(12, 206, 12, 0.838);
+}
+
+#task-container{
+    width: 90%;
+    height: 68%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    overflow-y: scroll;
+    background-color: rgba(255, 255, 255, 0.89);
+}
+::-webkit-scrollbar{
+    border-radius: 8px;
+    background-color: rgba(128, 128, 128, 0.192);
+    width: 11px;
+    margin-right: 10;
+}
+::-webkit-scrollbar-button{
+    border-radius: 8px;
+    background-color: rgba(128, 128, 128, 0.317);
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 8px;
+    background-color: rgba(128, 128, 128, 0.324);
+}
+#task-list{
+    position: relative;
+}
+
+.task{
+    font-size: 21px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-left: 25px;
+    user-select: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.546);
+}
+.task::before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    margin: 5px 0;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid black;
+    background: url('./images/unchecked.png');
+    background-size: contain;
+    background-position: center;
+}
+.task > h3{
+    font-size: 18px;
+    font-weight: 400;
+}
+.task > span{
+    font-weight: 400;
+    font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: blueviolet;
+}
+.task > span:hover{
+    cursor: pointer;
+}
+
+.pressed{
+    opacity: 0.5;
+} 
+
+
+.task-finished::before{
+    background-image: url('./images/checked.png');
+}
+.task-finished > h3{
+    text-decoration: line-through;
+    opacity: 0.4;
+}
+
+@media (max-width:800px){
+    .create-btn{
+        width: 80px;
+    }
+}
+
+@media (min-width: 100px) and (max-width:400px) {
+    .input-box{
+        flex-wrap: wrap;
+    }
+    .input-task{
+        width: 100%;
+    }
+    .create-btn{
+        margin: 0 auto;
+        width: 90%;
+    }
+}
